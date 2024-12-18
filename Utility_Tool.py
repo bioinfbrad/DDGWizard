@@ -26,7 +26,7 @@ if __name__ == '__main__':
         exit(1)
 
     args = parser.parse_args()
-    if args.pdb_id=='' or args.site_number=='' or (args.site_number!='all' and args.chain=='') or ((args.site_number!='all' and args.wt_aa=='')):
+    if args.pdb_id=='' or args.site_number=='' or (args.site_number!='all' and args.chain_id=='') or ((args.site_number!='all' and args.wt_aa=='')):
         print('please check your arguments')
         exit(1)
 
