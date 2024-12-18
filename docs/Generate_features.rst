@@ -61,8 +61,8 @@ Generate Feature-Enriched ΔΔG Data
     <div class="highlight-default notranslate">
     <div class="highlight">
     <pre style="overflow: scroll">
-    $ cd DDGWizard/bin/ncbi_blast_2_13_0+/bin/
-    $ ./makeblastdb -in <b>&lt;the path to fasta file&gt;</b> -dbtype prot -out <b>&lt;the path to save Blast database&gt;</b>/<b>&lt;the name to assign for Blast database&gt;</b> -parse_seqids
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>bin/ncbi_blast_2_13_0+/bin/
+    $ ./makeblastdb -in <b>&lt;/path/to/fasta file&gt;</b> -dbtype prot -out <b>&lt;/folder/to/save/Blast_database/&gt;</b><b>&lt;the_name_to_assign_for_Blast_database&gt;</b> -parse_seqids
     </pre>
     </div>
     </div>
@@ -90,16 +90,16 @@ Generate Feature-Enriched ΔΔG Data
     <div class="highlight">
     <pre style="overflow: scroll">
     $ conda activate DDGWizard
-    $ cd DDGWizard/
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
     $ python Generate_Dataset_Executable.py \
-        --raw_dataset_path <b>&lt;the path to csv file of raw data&gt;</b> \
-        --db_folder_path <b>&lt;the path to save Blast database&gt;</b> \
-        --db_name <b>&lt;the name to assign for Blast database&gt;</b> \
+        --raw_dataset_path src/Sample.csv \
+        --db_folder_path <b>&lt;/folder/to/save/Blast_database/&gt;</b> \
+        --db_name <b>&lt;the_name_to_assign_for_Blast database&gt;</b> \
         --if_reversed_data 1 \
         --blast_process_num 4 \
         --mode whole \
         --process_num 4 \
-        --container_type <b>&lt;Docker or Singularity or None&gt;</b>
+        --container_type -
     </pre>
     </div>
     </div>

@@ -65,21 +65,25 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <p></p>
     <p>There is an <span class="keyword-highlight">Environment.yml</span> file located in the path <span class="keyword-highlight">DDGWizard/src</span>, which is the Conda environment configuration file.</p>
     <p></p>
-    <p>Open this file with your text editor (e.g., nano, vim, vi, etc.). Here we use vi as an example:</p>
+    <p>Open this file with your text editor (e.g., nano, vim, vi, etc.). Here we use nano as an example:</p>
     <p></p>
     </div>
 
-.. code-block::
+.. raw:: html
 
-    $ cd DDGWizard/src/
-    $ vi Environment.yml
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ nano Environment.yml
+    </pre>
+    </div>
+    </div>
 
 .. raw:: html
 
     <div style="text-align: justify;">
-    <p>Modify the <span class="keyword-highlight">prefix</span>, <b>which is on the last line</b>. <b>Change the prefix to your local <span class="keyword-highlight">conda envs folder</span>.</b></p>
-    <p></p>
-    After changing, the <span class="keyword-highlight">prefix</span> should be <span class="keyword-highlight">prefix: <b>&lt;the path to your conda envs folder&gt;</b>/DDGWizard</span>.
+    Modify the <span class="keyword-highlight">prefix</span>, which is on the last line. Change the prefix to your local <span class="keyword-highlight">conda envs folder</span> path.
     <p></p>
     If you don't know how to find the path to local <span class="keyword-highlight">conda envs folder</span>, you can use command:
     <p></p>
@@ -88,6 +92,13 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
 .. code-block::
 
      $ conda info --envs
+
+.. raw:: html
+
+    <div style="text-align: justify;">
+    After changing, the <span class="keyword-highlight">prefix</span> should be <span class="keyword-highlight">prefix: /path/to/your_conda/envs/DDGWizard</span>.
+    <p></p>
+    </div>
 
 .. raw:: html
 
@@ -105,17 +116,43 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div style="text-align: justify;">
     <h4>3. Download NCBI-BLAST-2.13.0+</h4>
     <p></p>
-    Users need to download the NCBI-BLAST-2.13.0 program for allowing DDGWizard to carry out multiple sequence alignment (MSA). Please visit <a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.13.0/">Download NCBI-BLAST-2.13.0+</a> to download the <span class="keyword-highlight">ncbi-blast-2.13.0+-x64-linux.tar.gz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/ncbi_blast_2_13_0+/</span> and extract it. Use the following commands:
+    Users need to download the NCBI-BLAST-2.13.0 program for allowing DDGWizard to carry out multiple sequence alignment (MSA).
+    <p></p>
+    Users can visit <a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.13.0/">Download NCBI-BLAST-2.13.0+</a> to download the <span class="keyword-highlight">ncbi-blast-2.13.0+-x64-linux.tar.gz</span> file. We recommend download this file to the path <span class="keyword-highlight">DDGWizard/src/</span>. Users can also use <span class="keyword-highlight">wget</span> to download:
     <p></p>
     </div>
 
-.. code-block::
+.. raw:: html
 
-     $ wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.13.0/ncbi-blast-2.13.0+-x64-linux.tar.gz
-     $ cp ncbi-blast-2.13.0+-x64-linux.tar.gz DDGWizard/bin/ncbi_blast_2_13_0+/
-     $ cd DDGWizard/bin/ncbi_blast_2_13_0+/
-     $ tar -zxvf ncbi-blast-2.13.0+-x64-linux.tar.gz
-     $ cp -r ncbi_blast_2_13_0+/* .
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.13.0/ncbi-blast-2.13.0+-x64-linux.tar.gz
+    </pre>
+    </div>
+    </div>
+
+.. raw:: html
+
+    <div style="text-align: justify;">
+    Then copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/ncbi_blast_2_13_0+/</span> and extract it. Use the following commands (assuming the file has been downloaded to the path <span class="keyword-highlight">DDGWizard/src/</span>):
+    <p></p>
+    </div>
+
+.. raw:: html
+
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ cp ncbi-blast-2.13.0+-x64-linux.tar.gz ../bin/ncbi_blast_2_13_0+/
+    $ cd ../bin/
+    $ tar -zxvf ncbi-blast-2.13.0+-x64-linux.tar.gz
+    $ cp -r ncbi-blast-2.13.0+/* .
+    </pre>
+    </div>
+    </div>
 
 .. raw:: html
 
@@ -133,11 +170,9 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
    <p></p>
    Modeller has already been installed when creating Conda environment. But to allow our program to call it, you need to have a license of the Modeller and configure it.
    <p></p>
-   Please enter <a href="https://salilab.org/modeller/registration.html">Official Modeller Website</a> to register an account. Modeller use "Academic End-User Software License Agreement for MODELLER" terms. Please follow their instructions, read and accept the terms to obtain a license.
+   Please enter <a href="https://salilab.org/modeller/registration.html">Official Modeller Website</a> to register an account. Modeller use "Academic End-User Software License Agreement for MODELLER" terms. Please follow their instructions, read and accept the terms to obtain a license key.
    <p></p>
-   Then input the license into installed Modeller's configuration file. You can find it under the <span class="keyword-highlight">Conda envs folder</span>.
-   <p></p>
-   Enter your local <span class="keyword-highlight">Conda envs folder</span>, and open the Modeller's configuration file:
+   Then input the license key into installed Modeller's configuration file. You can access it under the <span class="keyword-highlight">Conda envs folder</span>. Please use following commands:
    <p></p>
    </div>
 
@@ -146,8 +181,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div class="highlight-default notranslate">
     <div class="highlight">
     <pre style="overflow: scroll">
-    $ cd <b>&lt;the path to your conda envs folder&gt;</b>
-    $ vi DDGWizard/lib/modeller-10.6/modlib/modeller/config.py
+    $ nano <b>&lt;/path/to/your_conda/envs/DDGWizard/&gt;</b>lib/modeller-10.6/modlib/modeller/config.py
     </pre>
     </div>
     </div>
@@ -155,16 +189,19 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
 .. raw:: html
 
     <div style="text-align: justify;">
-    <p>Replace the XXXX to your license. Save and close it.</p>
+    <p>Replace the XXXX to your license key. Save and close it.</p>
     <p></p>
     </div>
 
 .. raw:: html
 
     <div style="text-align: justify;">
-    <h4> To use DDGWizard feature calculation pipeline, the following software is optional (step 5-11) and not required to be installed (if certain software is not installed, the feature values it calculates will not be output).</h4>
+    <b> To use DDGWizard feature calculation pipeline, the following software dependencies are optional (step 5-11) and not required to be installed (if certain software is not installed, the feature values it calculates will not be output).</b>
     <p></p>
-    <h4>Before running, please don't forget to make sure the programs of the DDGWizard have the executable permission (step 12). Return to the DDGWizard program folder and execute the command:</h4>
+    <b>If users want to calculate more features, please install the following software dependencies. If users want to test the feature calculation pipeline for now, it can already run (for usage, see section Generate Feature-Enriched ΔΔG data). </b>
+    <p></p>
+    <b>Before running, please don't forget to make sure the programs of the DDGWizard have the executable permission (step 12). Return to the DDGWizard program folder and execute the command:</b>
+    <p></p>
     </div>
 
 .. raw:: html
@@ -172,7 +209,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div class="highlight-default notranslate">
     <div class="highlight">
     <pre style="overflow: scroll">
-    $ cd DDGWizard/
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
     $ chmod -R +x .
     </pre>
     </div>
@@ -181,49 +218,77 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
 .. raw:: html
 
     <div style="text-align: justify;">
-    <h4> (Optional) 5. Download FoldX 5.0</h4>
-    <p></p>
-    Users can download the FoldX 5.0 program for allowing DDGWizard to calculate energy terms of proteins. FoldX has academic version and commercial version. To use it in DDGWizard, academic version is enough. Please visit <a href="https://foldxsuite.crg.eu/academic-license-info">Apply for FoldX 5.0</a> to register an account, read and accept "FoldX Academic License" terms to download the <span class="keyword-highlight">foldx5Linux64.zip</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/FoldX_5.0/</span> and extract it. Use the following commands:
+    <b>To use DDGWizard prediction model, users need to further complete installation of step 5-8 (Ring 3.0 needs to apply and achieves permission to download, might take some time).</b>
     <p></p>
     </div>
 
-.. code-block::
+.. raw:: html
 
-     $ cp foldx5Linux64.zip DDGWizard/bin/FoldX_5.0/
-     $ cd DDGWizard/bin/FoldX_5.0/
-     $ unzip foldx5Linux64.zip
+    <div style="text-align: justify;">
+    <h4> (Optional) 5. Download FoldX 5.0</h4>
+    <p></p>
+    Users can download the FoldX 5.0 program for allowing DDGWizard to calculate energy terms of proteins. FoldX has academic version and commercial version. To use it in DDGWizard, academic version is enough. Please visit <a href="https://foldxsuite.crg.eu/academic-license-info">Apply for FoldX 5.0</a> to register an account, read and accept "FoldX Academic License" terms to download the <span class="keyword-highlight">foldx5Linux64.zip</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/FoldX_5.0/</span> and extract it. Use the following commands (assuming the file has been downloaded to the path <span class="keyword-highlight">DDGWizard/src/</span>):
+    <p></p>
+    </div>
+
+.. raw:: html
+
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ cp foldx5Linux64.zip ../bin/FoldX_5.0/
+    $ cd ../bin/FoldX_5.0/
+    $ unzip foldx5Linux64.zip
+    </pre>
+    </div>
+    </div>
 
 .. raw:: html
 
     <div style="text-align: justify;">
     <h4> (Optional) 6. Download Ring 3.0</h4>
     <p></p>
-    Users can download the Ring 3.0 application for allowing DDGWizard to calculate residue interaction information. Please visit <a href="https://biocomputingup.it/services/download/">Apply for Ring 3.0</a> to apply. Please read and accept the license of Ring 3.0 to obtain the <span class="keyword-highlight">ring-3.0.0.tgz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/ring-3.0.0/</span> and extract it. Use the following commands:
+    Users can download the Ring 3.0 application for allowing DDGWizard to calculate residue interaction information. Please visit <a href="https://biocomputingup.it/services/download/">Apply for Ring 3.0</a> to apply and wait permission to download. Please read and accept the license of Ring 3.0 to obtain the <span class="keyword-highlight">ring-3.0.0.tgz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/ring-3.0.0/</span> and extract it. Use the following commands (assuming the file has been downloaded to the path <span class="keyword-highlight">DDGWizard/src/</span>):
     <p></p>
     </div>
 
-.. code-block::
+.. raw:: html
 
-     $ cp ring-3.0.0.tgz DDGWizard/bin/ring-3.0.0/
-     $ cd DDGWizard/bin/ring-3.0.0/
-     $ tar -zxvf ring-3.0.0.tgz
-     $ cp -r ./ring-3.0.0/* .
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ cp ring-3.0.0.tgz ../bin/ring-3.0.0/
+    $ cd ../bin/ring-3.0.0/
+    $ tar -zxvf ring-3.0.0.tgz
+    $ cp -r ./ring-3.0.0/* .
+    </pre>
+    </div>
+    </div>
 
 .. raw:: html
 
     <div style="text-align: justify;">
     <h4> (Optional) 7. Download DisEMBL</h4>
     <p></p>
-    Users can download the DisEMBL program for allowing DDGWizard to count disorder information of proteins. Please visit <a href="https://zenodo.org/records/14246673">Download the DisEMBL</a> to download the <span class="keyword-highlight">DisEMBL-1.4.tgz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/DisEMBL_1_4/</span> and extract it. Use the following commands:
+    Users can download the DisEMBL program for allowing DDGWizard to count disorder information of proteins. Please visit <a href="https://zenodo.org/records/14246673">Download the DisEMBL</a> to download the <span class="keyword-highlight">DisEMBL-1.4.tgz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/DisEMBL_1_4/</span> and extract it. Use the following commands (assuming the file has been downloaded to the path <span class="keyword-highlight">DDGWizard/src/</span>):
     <p></p>
     </div>
 
-.. code-block::
+.. raw:: html
 
-     $ cp DisEMBL-1.4.tgz DDGWizard/bin/DisEMBL_1_4/
-     $ cd DDGWizard/bin/DisEMBL_1_4/
-     $ tar -zxvf DisEMBL-1.4.tgz
-     $ cp -r ./DisEMBL-1.4/* .
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ cp DisEMBL-1.4.tgz DDGWizard/bin/DisEMBL_1_4/
+    $ cd ../bin/DisEMBL_1_4/
+    $ tar -zxvf DisEMBL-1.4.tgz
+    $ cp -r ./DisEMBL-1.4/* .
+    </pre>
+    </div>
+    </div>
 
 .. raw:: html
 
@@ -247,8 +312,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div class="highlight-default notranslate">
     <div class="highlight">
     <pre style="overflow: scroll">
-    $ cd <b>&lt;the path to your conda envs folder&gt;</b>
-    $ cd DDGWizard/bin/
+    $ cd <b>&lt;/path/to/your_conda/envs/DDGWizard/bin/&gt;</b>
     $ cp mkdssp dssp
     </pre>
     </div>
@@ -273,7 +337,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <h4>(Optional) 10. Download PROFbval</h4>
     PROFbval relies on the Ubuntu environment. To address cross-platform compatibility, we have created container images for easy download by users. This requires users have Docker or Singularity as a prerequisite.
     <p></p>
-    Please download the following two files: <span class="keyword-highlight">myprof.tar</span> (128MB) and <span class="keyword-highlight">myprof.sif</span> (360MB) from <a href="https://zenodo.org/records/12817843">https://zenodo.org/records/12817843</a>, and copy them to the path: <span class="keyword-highlight">DDGWizard/src/Prof_Source</span>:
+    Please download the following two files: <span class="keyword-highlight">myprof.tar</span> (128MB) and <span class="keyword-highlight">myprof.sif</span> (360MB) from <a href="https://zenodo.org/records/12817843">https://zenodo.org/records/12817843</a>, and copy them to the path: <span class="keyword-highlight">DDGWizard/src/Prof_Source</span>. Please use the following commands (assuming the files have been downloaded to the path <span class="keyword-highlight">DDGWizard/src/).
     <p></p>
     </div>
 
@@ -282,8 +346,9 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div class="highlight-default notranslate">
     <div class="highlight">
     <pre style="overflow: scroll">
-    $ cp <b>&lt;the path to myprof.tar&gt;</b>/myprof.tar DDGWizard/src/Prof_Source
-    $ cp <b>&lt;the path to myprof.sif&gt;</b>/myprof.sif DDGWizard/src/Prof_Source
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ cp ./myprof.tar ./Prof_Source
+    $ cp ./myprof.sif ./Prof_Source
     </pre>
     </div>
     </div>
@@ -297,7 +362,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
 
 .. code-block::
 
-    $ docker load -i DDGWizard/src/Prof_Source/myprof.tar
+    $ docker load -i <b>&lt;/path/to/DDGWizard/&gt;</b>src/Prof_Source/myprof.tar
 
 .. raw:: html
 
@@ -311,17 +376,24 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div style="text-align: justify;">
     <h4> (Optional) 11. Download SIFT 6.2.1</h4>
     <p></p>
-    Users can download the SIFT 6.2.1 program for allowing DDGWizard to predict impact of amino acid substitution on protein function. Please visit <a href="https://sift.bii.a-star.edu.sg/www/code.html">Download SIFT 6.2.1</a> to download the <span class="keyword-highlight">sift6.2.1.tar.gz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/sift6_2_1/</span> and extract it. Use the following commands:
+    Users can download the SIFT 6.2.1 program for allowing DDGWizard to predict impact of amino acid substitution on protein function. Please visit <a href="https://sift.bii.a-star.edu.sg/www/code.html">Download SIFT 6.2.1</a> or use <span class="keyword-highlight">wget</span> to download the <span class="keyword-highlight">sift6.2.1.tar.gz</span> file. Copy this compressed file to the path <span class="keyword-highlight">DDGWizard/bin/sift6_2_1/</span> and extract it. Use the following commands (assuming the files have been downloaded to the path <span class="keyword-highlight">DDGWizard/src/):
     <p></p>
     </div>
 
-.. code-block::
+.. raw:: html
 
-     $ wget https://s3.amazonaws.com/sift-public/nsSNV/sift6.2.1.tar.gz
-     $ cp sift6.2.1.tar.gz DDGWizard/bin/sift6_2_1/
-     $ cd DDGWizard/bin/sift6_2_1/
-     $ tar -zxvf sift6.2.1.tar.gz
-     $ cp -r sift6.2.1/* .
+    <div class="highlight-default notranslate">
+    <div class="highlight">
+    <pre style="overflow: scroll">
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>src/
+    $ wget https://s3.amazonaws.com/sift-public/nsSNV/sift6.2.1.tar.gz
+    $ cp sift6.2.1.tar.gz ../bin/sift6_2_1/
+    $ cd ../bin/sift6_2_1/
+    $ tar -zxvf sift6.2.1.tar.gz
+    $ cp -r sift6.2.1/* .
+    </pre>
+    </div>
+    </div>
 
 .. raw:: html
 
@@ -345,7 +417,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
     <div class="highlight-default notranslate">
     <div class="highlight">
     <pre style="overflow: scroll">
-    $ cd DDGWizard/
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
     $ chmod -R +x .
     </pre>
     </div>

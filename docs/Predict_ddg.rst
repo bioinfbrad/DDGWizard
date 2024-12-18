@@ -44,11 +44,11 @@ Predict ΔΔG
     <div class="highlight">
     <pre style="overflow: scroll">
     $ conda activate DDGWizard
-    $ cd DDGWizard/
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
     $ python Predict_ddG_Executable.py \
-        --pred_dataset_path <b>&lt;the path to csv file of raw data&gt;</b> \
-        --db_folder_path <b>&lt;the path to save Blast database&gt;</b> \
-        --db_name <b>&lt;the name to assign for Blast database&gt;</b> \
+        --pred_dataset_path src/Sample_Pred.csv \
+        --db_folder_path <b>&lt;/folder/to/save/Blast_database/&gt;</b> \
+        --db_name <b>&lt;the_name_to_assign_for_Blast database&gt;</b> \
         --if_reversed_data 0 \
         --blast_process_num 4 \
         --mode whole \

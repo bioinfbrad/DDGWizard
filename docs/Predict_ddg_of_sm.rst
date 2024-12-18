@@ -48,8 +48,8 @@ Predict ΔΔG for Saturation Mutagenesis
     <div class="highlight">
     <pre style="overflow: scroll">
     $ conda activate DDGWizard
-    $ cd DDGWizard/
-    $ python utility_tool.py \
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
+    $ python Utility_Tool.py \
        --pdb_id 1SHG \
        --chain_id A \
        --site_number 57 \
@@ -75,8 +75,8 @@ Predict ΔΔG for Saturation Mutagenesis
     <div class="highlight">
     <pre style="overflow: scroll">
     $ conda activate DDGWizard
-    $ cd DDGWizard/
-    $ python utility_tool.py \
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
+    $ python Utility_Tool.py \
        --pdb_id 1SHG \
        --site_number all \
        --pH 7 \
@@ -167,11 +167,11 @@ Predict ΔΔG for Saturation Mutagenesis
     <div class="highlight">
     <pre style="overflow: scroll">
     $ conda activate DDGWizard
-    $ cd DDGWizard/
+    $ cd <b>&lt;/path/to/DDGWizard/&gt;</b>
     $ python Predict_ddG_Executable.py \
         --pred_dataset_path ./src/Pred.csv \
-        --db_folder_path <b>&lt;the path to save Blast database&gt;</b> \
-        --db_name <b>&lt;the name to assign for Blast database&gt;</b> \
+        --db_folder_path <b>&lt;/folder/to/save/Blast_database/&gt;</b> \
+        --db_name <b>&lt;the_name_to_assign_for_Blast database&gt;</b> \
         --if_reversed_data 0 \
         --blast_process_num 4 \
         --mode whole \
