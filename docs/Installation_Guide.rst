@@ -115,7 +115,7 @@ Feature Calculation Pipeline (for Generating Feature-Enriched ΔΔG Data)
      $ cp ncbi-blast-2.13.0+-x64-linux.tar.gz DDGWizard/bin/ncbi_blast_2_13_0+/
      $ cd DDGWizard/bin/ncbi_blast_2_13_0+/
      $ tar -zxvf ncbi-blast-2.13.0+-x64-linux.tar.gz
-     $ cp -r ncbi_blast_2_13_0+/* .
+     $ cp -r ncbi-blast-2.13-0+/* .
 
 .. raw:: html
 
