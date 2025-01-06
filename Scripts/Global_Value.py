@@ -49,8 +49,8 @@ Ring_Expired_Date='2033-05-04'
 
 FoldX_Path='./bin/FoldX_5.0/'
 
-FoldX_Name='foldx_20241231'
-FoldX_Expired_Date='2024-12-31'
+FoldX_Name='foldx_20251231'
+FoldX_Expired_Date='2025-12-31'
 Rotabase_Path='./src/Others/rotabase.txt'
 
 Rdkit_Path='./bin/rdkit_2023_3_1/'
